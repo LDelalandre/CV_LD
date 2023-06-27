@@ -1,0 +1,88 @@
+---
+name: Léo
+surname: Delalandre
+position: "Doctorant"
+address: "CEFE (Centre d'Ecologie Fonctionnelle et Evolutive), Montpellier"
+phone: +33 6 95 14 05 37
+orcid: 0000-0003-2875-4587
+email: "leo.delalandre@cefe.cnrs.fr"
+github: LDelalandre
+scholar: "s4Le9SQAAAAJ"
+researchgate: Leo-Delalandre
+date: "`r withr::with_locale(c(LC_TIME = 'fr_FR'), {format(Sys.time(), '%B %Y')})`"
+output: vitae::hyndman
+header-includes:
+  - \definecolor{headcolor}{HTML}{1E49BF}
+  - \definecolor{linkscolor}{HTML}{026dbb}
+  - \hypersetup{colorlinks=true, linkcolor=linkscolor, filecolor=linkscolor, urlcolor=linkscolor, urlbordercolor=linkscolor}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+library(vitae)
+library(dplyr)
+```
+
+# Cursus universitaire
+
+```{r acedemic-education}
+library(tibble)
+tribble(
+  ~ Degree, ~ Year, ~ Institution, ~ Where, ~ why,
+  "Doctorat en Écologie", "2020-2024", "École Doctorale 584 GAIA, Univ. Montpellier", "Montpellier, France", "Directeurs: \\textbf{Cyrille Violle} et \\textbf{Eric Garnier}\\\\~Titre: « Persistance des espèces annuelles dans les écosystèmes herbacés : mécanismes écologiques et écophysiologiques »",
+  "Master 2 Biodiversité, Ecologie, Evolution",  "2019-2020", "Université Paris Sud, Muséum d'Histoire Naturelle", "Paris, France", NA,
+  "Agrégation de SV-STU",  "2018-2019", "École Normale Supérieure de Lyon, Univ. Claude Bernard Lyon 1", "Lyon, France", NA,
+  "Master 1 Biosciences",  "2016-2017", "École Normale Supérieure de Lyon, Univ. Claude Bernard Lyon 1", "Lyon, France",NA,
+  "Licence Biosciences", "2015-2016", "École Normale Supérieure de Lyon, Univ. Claude Bernard Lyon 1", "Lyon, France",NA,
+  "Classe Préparatoire BCPST", "2013-2015", "Lycée Pierre Corneille", "Rouen, France",NA,
+) %>% 
+  detailed_entries(what = Degree, when = Year, with = Institution, where = Where, why = why, .protect = FALSE)
+```
+
+# Parcours professionnel académique
+
+```{r academic-experience}
+tribble(
+  ~ Degree, ~ Year, ~ Institution, ~ Where, ~ Why,
+
+  "Thèse de doctorat", "2020-2024", "Université de Montpellier", "Montpellier, France", "Directeurs: \\textbf{Cyrille Violle} et \\textbf{Eric Garnier}. Contrat doctoral spécifique normalien",
+
+  
+  "Stage de Master 2", "janvier 2020 - juillet 2020", "CEFE, Université de Montpellier", "Montpellier, France",
+    "Encadrant: \\textbf{Cyrille Violle}. Effets des espèces fonctionnellement distinctes sur la productivité d'écosystèmes forestiers",
+  
+  "Stage de Master 1", "janvier 2017 - juin 2017", "CIDE (Centre d'Investigations sur la Désertification)", "Valence, Espagne",
+    "Encadrant·es: \\textbf{Alicia Montesinos-Navarro} et \\textbf{Miguel Verdu}. Détection d'interactions de facilitation entre plantes à partir de données de co-occurrence spatiale",
+  
+  "Stage de L3", "avril 2016 - juillet 2016", "IEES Paris (Institute of Ecology and Environmental Sciences)", "Paris, France",
+  "Encadrant·es: \\textbf{Elisa Thébault} et \\textbf{Colin Fontaine}. Modélisation d’un réseau de pollinisation et étude des effets de la phénologie sur les interactions"
+) %>% 
+  detailed_entries(Degree, Year, Institution, Where, why = Why, .protect = FALSE)
+```
+
+# Publications
+
+```{r published-papers}
+published <- bibliography_entries("bibliography/Papiers_Leo.bib")
+
+published %>% 
+  arrange(desc(issued))
+```
+
+# Expérience d'enseignement
+
+J'ai enseigné ~130 heures en biologie, écologie, évolution, statistiques, à tous les niveaux de la L1 au M2.
+
+Je suis par ailleurs titulaire de l'agrégation de sciences de la vie, de la Terre et de l'Univers (SV-STU).
+
+
+| Nom du Cours                          |Type de Cours| Année(s)      | Niveau         |Durée (éq.TD)|
+|---------------------------------------|-------------|---------------|----------------|-------------|
+| Cycle de vie des organismes (UM)        | TD        | 2020        | L1            | 18h |
+| Du génotype au phénotype (UM)        | TD et TP       | 2020        | L2           | 26h |
+| Ecologie évolutive (UM)        | TD et TP       | 2020 et 2021        | L3           | 46h |
+| Statistiques (modèles linéaires) (UM)        | TD et TP       | 2021        | M1           | 12h |
+| Ecologie fonctionnelle (UM)        | TD et TP       | 2022        | L2           | 14h |
+| Diversité fonctionnelle (UM)        | TD et TP       | 2021 et 2022        | M2          | 12h |
+**UM**: Université de Montpellier
+
