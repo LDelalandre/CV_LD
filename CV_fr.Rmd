@@ -10,7 +10,7 @@ github: LDelalandre
 scholar: "s4Le9SQAAAAJ"
 researchgate: Leo-Delalandre
 date: "`r withr::with_locale(c(LC_TIME = 'fr_FR'), {format(Sys.time(), '%B %Y')})`"
-output: vitae::hyndman
+output: vitae::hyndman #vitae::twentyseconds #
 header-includes:
   - \definecolor{headcolor}{HTML}{1E49BF}
   - \definecolor{linkscolor}{HTML}{026dbb}

@@ -1,0 +1,1 @@
+Pour avoir mon nom en gras, remplacer Delalandre, par \textbf{Delalandre},
